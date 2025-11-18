@@ -29,9 +29,40 @@
 		F52E1E2B2ECCD298004684C6 /* WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F5D01DCF2ECCE83000BDDB06 /* Exceptions for "WeatherApp" folder in "WeatherAppTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Resources/Fonts/Poppins-Bold.ttf",
+				"Resources/Fonts/Poppins-SemiBold.ttf",
+			);
+			target = F52E1E202ECCD298004684C6 /* WeatherAppTests */;
+		};
+		F5D01DD02ECCE83000BDDB06 /* Exceptions for "WeatherApp" folder in "WeatherAppUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Resources/Fonts/Poppins-Bold.ttf",
+				"Resources/Fonts/Poppins-SemiBold.ttf",
+			);
+			target = F52E1E2A2ECCD298004684C6 /* WeatherAppUITests */;
+		};
+		F5D01DD22ECCE84B00BDDB06 /* Exceptions for "WeatherApp" folder in "WeatherApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F52E1E112ECCD295004684C6 /* WeatherApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F52E1E142ECCD295004684C6 /* WeatherApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F5D01DD22ECCE84B00BDDB06 /* Exceptions for "WeatherApp" folder in "WeatherApp" target */,
+				F5D01DCF2ECCE83000BDDB06 /* Exceptions for "WeatherApp" folder in "WeatherAppTests" target */,
+				F5D01DD02ECCE83000BDDB06 /* Exceptions for "WeatherApp" folder in "WeatherAppUITests" target */,
+			);
 			path = WeatherApp;
 			sourceTree = "<group>";
 		};
@@ -397,6 +428,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show weather information.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,6 +461,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherApp/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app needs your location to show weather information.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
