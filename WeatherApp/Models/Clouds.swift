@@ -10,3 +10,8 @@ import Foundation
 struct Clouds: Codable {
     let all: Int
 }
+extension Clouds {
+    static func mock() -> Self {
+        .init(all: 100)
+    }
+}

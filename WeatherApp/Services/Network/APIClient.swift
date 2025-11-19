@@ -24,6 +24,11 @@ class APIClient {
         }
         
         return URLSession.shared.dataTaskPublisher(for: url)
+//            .handleEvents(receiveOutput: { output in
+//                    if let jsonString = String(data: output.data, encoding: .utf8) {
+//                        print("API Response JSON:\n\(jsonString)")
+//                    }
+//                })
             .tryMap { output in
                 guard let http = output.response as? HTTPURLResponse,
                       http.statusCode == 200 else {

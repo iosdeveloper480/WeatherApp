@@ -7,33 +7,32 @@
 
 import SwiftUI
 
-
 struct WeatherCell: View {
+    
+    let weatherListModel: WeatherList
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Monday")
+            Text(weatherListModel.date.dayName())
                 .font(.custom("Poppins-SemiBold", size: 16))
                 .lineSpacing(0)
                 .frame(height: 24, alignment: .center)
             HStack {
-                Image("Cloudy")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .clipShape(.circle)
+                WAImageView(url: weatherListModel.weather.first!.iconURL)
                 Spacer()
-                Text("30°")
+                Text("\(weatherListModel.main.tempCelsius)°C")
                     .font(.custom("Poppins-Bold", size: 36))
                     .lineSpacing(0)
                     .frame(height: 44, alignment: .center)
-            }
-            .frame(maxWidth: .infinity)
+            }.backgroundExtensionEffect()
         }
         .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
         .background(Color.white)
         .cornerRadius(10)
+//        .glassEffect(.regular, in: .rect(cornerRadius: 10.0))
     }
 }
 
 #Preview {
-    WeatherCell()
+    WeatherCell(weatherListModel: WeatherList())
 }

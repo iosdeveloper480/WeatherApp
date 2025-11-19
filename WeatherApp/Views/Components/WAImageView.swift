@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct WAImageView: View {
+    let url: URL?
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        AsyncImage(url: url) { phase in
+            switch phase {
+            case .empty:
+                ProgressView()
+                
+            case .success(let image):
+                image
+                    .resizable()
+                    .scaledToFit()
+                
+            case .failure(_):
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .resizable()
+                    .scaledToFill()
+                
+            @unknown default:
+                ProgressView()
+            }
+        }
+        .frame(width: 100, height: 100)
     }
 }
 
 #Preview {
-    WAImageView()
+    WAImageView(url: URL(string: "https://openweathermap.org/img/wn/01n@2x.png"))
 }

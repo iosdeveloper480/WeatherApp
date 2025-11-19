@@ -12,3 +12,8 @@ struct Wind: Codable {
     let deg: Int
     let gust: Double
 }
+extension Wind {
+    static func mock() -> Self {
+        .init(speed: 10.0, deg: 180, gust: 15.0)
+    }
+}

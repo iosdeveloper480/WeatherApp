@@ -26,7 +26,6 @@ class LocationService: NSObject, ObservableObject, CLLocationManagerDelegate {
         manager.startUpdatingLocation()
     }
 
-    // Permission status updates
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedWhenInUse, .authorizedAlways:
@@ -38,10 +37,9 @@ class LocationService: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
     }
 
-    // Location update callback
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         currentLocation = locations.first
-        manager.stopUpdatingLocation() // stop to save battery
+        manager.stopUpdatingLocation()
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

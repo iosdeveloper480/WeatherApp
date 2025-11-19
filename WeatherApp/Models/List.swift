@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct List: Decodable {
+struct WeatherList: Decodable, Identifiable {
+    let id = UUID()
     let dt: Int
     let main: Main
     let weather: [Weather]
@@ -36,5 +37,15 @@ struct List: Decodable {
         let dtTxtString = try container.decode(String.self, forKey: .dtTxt)
 
         self.date = Date.dateFromStrings(dtTxtString)
+    }
+    init() {
+        self.dt = 01
+        self.main = Main.mock()
+        self.weather = []
+        self.clouds = Clouds.mock()
+        self.wind = Wind.mock()
+        self.visibility = 0
+        self.pop = 0
+        self.date = Date()
     }
 }
